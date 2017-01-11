@@ -3,12 +3,14 @@ import time;
 
 def setupOut(outputs):
     for out in outputs:
-        io.setup(out,io.OUT);
+        for subout in out:
+            io.setup(subout,io.OUT);
     motorOff(outputs);
 
 def setupIn(inputs):
     for inp in inputs:
-        io.setup(inp,io.IN);
+        for subinp in inp:
+            io.setup(subinp,io.IN);
 
 def motorOff(pair):
     for inp in pair:
